@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-Allow: /
-Sitemap: https://jimmyff.github.io/zola-inky/sitemap.xml

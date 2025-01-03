@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 Allow: /
-Sitemap: https://jimmyff.github.io/zola-inky/sitemap.xml
+Sitemap: https://alsaaleak.github.io/sitemap.xml
