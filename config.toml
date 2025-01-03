@@ -1,6 +1,6 @@
 title = "الصعاليك"
 description = "ثُلة صعاليك يبتغون علمًا نافعًا ومجدًا واقعًا"
-base_url = "https://jimmyff.github.io/zola-inky"
+base_url = "https://alsaaleak.github.io"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -40,7 +40,7 @@ avatar = "/alsaaleak.png"
 # Your Google Analytics measurement id ("G-XXXXXXXXXX")
 # google_analytics_tag_id = "";
 
-keywords = "zola, theme, alsaleak, الصعاليك"
+keywords = "لغة عربية,عرنجية, alsaleak, الصعاليك"
 
 search_enabled = true
 
