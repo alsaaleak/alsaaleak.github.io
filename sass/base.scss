@@ -332,8 +332,12 @@ figure {
     #column-4 {
       .image-cover {
         img {
-          height: 50vh;
+          height: fit-content;
           object-fit: contain;
+        }
+
+        span {
+          text-align: center;
         }
 
       }
