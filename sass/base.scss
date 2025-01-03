@@ -219,7 +219,7 @@ textarea {
 
 .view-all {
   text-align: center;
-  margin: 0.5rem;
+  margin-top: 0.5rem;
   width: 100%;
 
   a {
@@ -235,6 +235,11 @@ textarea {
       color: var(--text-color);
     }
   }
+
+}
+
+figure {
+  overflow: hidden;
 
 }
 
@@ -309,23 +314,48 @@ textarea {
 @media (max-width: 600px) {
   body {
     padding: 0 1rem;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  h2 {
-    font-size: 1.6rem;
-  }
-
-  h3 {
-    font-size: 1.2rem;
-  }
-
-  h4 {
     font-size: 1rem;
+    line-height: 1.5rem;
   }
+
+  figure {
+    overflow: hidden;
+
+    iframe {
+      width: 700px;
+    }
+  }
+
+  .row-content {
+
+    #column-2,
+    #column-4 {
+      .image-cover {
+        img {
+          height: 50vh;
+          object-fit: contain;
+        }
+
+      }
+
+    }
+  }
+
+  // h1 {
+  //   font-size: 1.8rem;
+  // }
+
+  // h2 {
+  //   font-size: 1.6rem;
+  // }
+
+  // h3 {
+  //   font-size: 1.2rem;
+  // }
+
+  // h4 {
+  //   font-size: 1rem;
+  // }
 
   .hero {
 
