@@ -53,10 +53,10 @@
         {% endif %}
 
         <div class="matter">
-          <h3 class="title">
+          <h4 class="title">
             <a href="{{ post.permalink | safe }}">{{ post.title }}</a>
             {% if post.draft %}<span class="draft">(مسودة)</span>{% endif %}
-          </h3>
+          </h4>
           {% if post.description %}
           <p class="description">{{ post.description }}</p>
           {% endif %}
