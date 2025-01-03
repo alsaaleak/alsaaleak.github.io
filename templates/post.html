@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="post">
+
+  <header class="post-header">
+    <h1 class="title">{{ page.title }} {% if page.draft %}<span class="draft">Draft</span>{% endif %}</h1>
+    <ul class="entry-meta" data-type="simple:slash">
+      {% if page.taxonomies is containing ("authors") %}
+      <ul class="tags">
+        {% for author in page.taxonomies["authors"] %}
+        <li class="meta-author" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href='{{ config.base_url | safe }}/authors/{{ author | slugify }}'><span itemprop="name">{{ author
+              }}</span></a>
+        </li>
+        {% endfor %}
+        |
+        {% endif %}
+
+        <li class="meta-date" itemprop="datePublished">{{ page.date | date(format='%Y/%m/%d') }}</li>
+        |
+        {% if page.taxonomies is containing ("tags") %}
+        {% for tag in page.taxonomies["tags"] %}
+        <li><a href='{{ config.base_url | safe }}/tags/{{ tag | slugify }}'>{{ tag }}</a></li>
+        {% endfor %}
+        
+        {% endif %}
+      </ul>
+  </header>
+  {{ hooks::post_above_content(page=page) }}
+  <article>{{ page.content | safe }}</article>
+
+
+  {{ hooks::post_below_content(page=page) }}
+
+
+  {{ hooks::post_below_tags(page=page) }}
+</section>
+{% endblock content %}

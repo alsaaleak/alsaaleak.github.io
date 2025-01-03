@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<section class="hero">
+  <div class="ornament"></div>
+  <div class="content">
+    <div class="decorative-border"></div>
+    <h1 class="title">الصعاليك</h1>
+    <p class="subtitle">ثلة من الصعاليك يبتغون علمًا نافعًا ومجدًا واقعًا</p>
+    <a href="https://t.me/+yX8K-okJGctiZTg0" class="cta">انضم للصعاليك</a>
+  </div>
+</section>
+<div class="row-content">
+  <div class="column column-half column-md-full" id="column-3">
+    <h2 id="heading-about-saalik" class="section-heading">ماذا أردنا بالصعلكة وماهي؟</h2>
+    <div id="text-about-saalik" class="text-content equal">إنها مفارقة القوم نبغي فيها إطلاق العقل إلى سعته من الحق
+      الذاب عنه الهوى أعني هوى العرب المعاصرين الأعجمي فكانت لنا مما هم فيه من اللغط والباطل كأنا سادة هجرت لما صفونا عن
+      كدرهم وقد جعلونا مغمورين بغير حق ولم ينصفونا وما استرحنا حتى بعد أن توارينا بالمسافة ظلوا يقنصوننا بمناظير ١٦ ضعف
+      ورصاصات كأمثال سبابتك يجهلوننا فجَهلنا لهم ونزعنا حلمنا وصرنا مصيرنهم إلى البؤسى بدولة متوعدة مترامية الأطراف
+      ضواحيها الأطواد وحوائطها السحب وتأجيل جيش حَسْبُكَ من الرعال يُذهب مذاهبهم طحينا نخص منها الحداثة والترميز
+      والرمنتكية والحدث الأصغر الحر والعصيدة النثرية والبعر الشعبي والعرنجية والتخريج النحوي ومجمع القاهرة وكل ما استحدث
+      من جنابة على الأمة أن تتطهر منها ما كان نصحا بإمساك يد قد طلعوه إلى إمساك قول الحارث بن حلزة بأيديهم رماح صدورهن
+      القضاء
+    </div>
+  </div>
+  <div class="column column-half column-md-full" id="column-2">
+    <div class="image-cover">
+      <span aria-hidden="true" class="cover-background"></span>
+      <img decoding="async" width="1120" height="578" class="cover-image" alt="الصعاليك" src="/alsaleak-who2.png">
+      <span>كأن مثار النقع فوق رؤوسنا *** وأسيافنا ليل تهاوى كواكبه</span>
+    </div>
+  </div>
+</div>
+
+<!-- المحتوى الحالي للصفحة الرئيسية -->
+
+<!-- قسم آخر المقالات -->
+<section class="latest-posts">
+  <h2>آخر ما نُشر</h2>
+  <div class="posts-grid">
+    {% set posts_section = get_section(path="posts/_index.md") %}
+    {% for post in posts_section.pages | slice(end=3) %}
+    <div class="post-card">
+      <div class="post-header">
+        {% if post.date %}
+        <div class="meta">
+          <div class="date">
+            <span class="day">{{ post.date | date(format="%m") }}</span>
+            <span class="rest">{{ post.date | date(format="%d") }}</span>
+          </div>
+        </div>
+        {% endif %}
+
+        <div class="matter">
+          <h3 class="title">
+            <a href="{{ post.permalink | safe }}">{{ post.title }}</a>
+            {% if post.draft %}<span class="draft">(مسودة)</span>{% endif %}
+          </h3>
+          {% if post.description %}
+          <p class="description">{{ post.description }}</p>
+          {% endif %}
+        </div>
+        <div class="matter">
+          <ul>
+            {% if post.taxonomies is containing ("tags") %}
+            {% for tag in post.taxonomies["tags"] %}
+            <li><a href='{{ config.base_url | safe }}/tags/{{ tag | slugify }}'>{{ tag }}</a></li>
+            {% endfor %}
+
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="view-all">
+    <a href="{{ config.base_url | safe }}/posts">زر الكناشة</a>
+  </div>
+</section>
+
+{% endblock content %}
