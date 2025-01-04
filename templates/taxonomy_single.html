@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>taxonomies.name &raquo; {{ term.name | capitalize }}</h1>
+<h1>{{taxonomy.name | capitalize }} &raquo; {{ term.name | capitalize }}</h1>
 
 {% for year, posts in term.pages | group_by(attribute="year") %}
 <ul class="posts flat">

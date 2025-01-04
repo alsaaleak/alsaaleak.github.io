@@ -1,0 +1,38 @@
+#!/bin/bash
+
+URL="http://alsaaleak.github.io"
+OUTPUT_FILE="feed.xml"
+
+# إنشاء ملف RSS
+create_rss() {
+    echo '<?xml version="1.0" encoding="UTF-8" ?>' > $OUTPUT_FILE
+    echo '<rss version="2.0">' >> $OUTPUT_FILE
+    echo '<channel>' >> $OUTPUT_FILE
+    echo '<title>عنوان موقعك</title>' >> $OUTPUT_FILE
+    echo "<link>$URL</link>" >> $OUTPUT_FILE
+    echo '<description>وصف موقعك</description>' >> $OUTPUT_FILE
+    
+    # استخراج المحتوى باستخدام curl وتحليله باستخدام grep/sed
+    curl -s "$URL" | \
+    grep -o '<article>.*</article>' | \
+    while read article; do
+        title=$(echo $article | grep -o '<h2>.*</h2>' | sed 's/<[^>]*>//g')
+        link=$(echo $article | grep -o 'href="[^"]*"' | cut -d'"' -f2)
+        desc=$(echo $article | grep -o '<p>.*</p>' | sed 's/<[^>]*>//g')
+        
+        echo "<item>" >> $OUTPUT_FILE
+        echo "<title>$title</title>" >> $OUTPUT_FILE
+        echo "<link>$link</link>" >> $OUTPUT_FILE
+        echo "<description>$desc</description>" >> $OUTPUT_FILE
+        echo "</item>" >> $OUTPUT_FILE
+    done
+    
+    echo '</channel>' >> $OUTPUT_FILE
+    echo '</rss>' >> $OUTPUT_FILE
+}
+
+# تشغيل الدالة
+create_rss
+
+# للتشغيل التلقائي، أضف للـ crontab:
+# * * * * * /path/to/script.sh

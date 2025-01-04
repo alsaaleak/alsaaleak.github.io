@@ -199,7 +199,6 @@ textarea {
     .cta {
       font-weight: bold;
       border: 2px solid;
-      padding: .5rem;
       border-radius: 0.5rem;
       display: block;
       width: 100%;
@@ -322,7 +321,7 @@ figure {
     overflow: hidden;
 
     iframe {
-      width: 700px;
+      width: 100%
     }
   }
 

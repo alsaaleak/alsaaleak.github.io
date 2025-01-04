@@ -1,7 +1,8 @@
 title = "الصعاليك"
 description = "ثُلة صعاليك يبتغون علمًا نافعًا ومجدًا واقعًا"
 base_url = "https://alsaaleak.github.io"
-
+generate_feeds = true
+feed_filenames = ["rss.xml"]
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
@@ -18,7 +19,7 @@ default_language = "en"
 #       {name = "authors"}, # Basic definition: no feed or pagination
 #     ]
 #
-taxonomies = [{ name = "tags", lang = "ar", rss = true },{ name = "authors", lang = "ar", rss = false }]
+taxonomies = [{ name = "tags", lang = "ar", rss = true },{ name = "authors", lang = "ar", rss = true }]
 
 
 [markdown]
