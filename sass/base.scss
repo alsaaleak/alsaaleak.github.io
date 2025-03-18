@@ -224,6 +224,28 @@ textarea {
 
 }
 
+.send {
+  text-align: center;
+  margin-top: 0.5rem;
+  width: 100%;
+
+  a {
+    width: 100%;
+    border: 1px solid var(--text-color-alt);
+    ;
+    padding: 5px;
+    display: block;
+    border-radius: var(--border-radius);
+    color: var(--text-color-alt);
+
+    &:hover {
+      text-decoration: none;
+      background-color: var(--text-color-alt);
+      color: var(--text-color);
+    }
+  }
+}
+
 .view-all {
   text-align: center;
   margin-top: 0.5rem;
