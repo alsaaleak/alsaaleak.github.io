@@ -272,6 +272,20 @@ figure {
 
 }
 
+.list {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  justify-content: space-around;
+
+  li:hover {
+    background-color: var(--primary);
+    border-radius: 30px;
+    padding: 3px;
+    color: wheat;
+  }
+}
+
 @keyframes rotatetitle {
 
   0%,

@@ -7,6 +7,13 @@
   display: block;
 
   article {
+    .list {
+      display: flex;
+      list-style: none;
+      gap: 10px;
+      justify-content: space-around;
+    }
+
     img {
       // max-width: 800px;
       max-height: 90vh;
@@ -29,13 +36,14 @@
 }
 
 .post-header {
-border-bottom: 1px solid var(--bg-white);
-margin-top: 1.5rem;
-display:flex;
+  border-bottom: 1px solid var(--bg-white);
+  margin-top: 1.5rem;
+  display: flex;
 
 }
-header.post-header{
-  display:block;
+
+header.post-header {
+  display: block;
 }
 
 .post-header .meta .date {

@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="title">{{ section.title }}</h1>
+<h1 class="title">{{ section.title }}
+</h1>
+<ul class="list">
+  <li><a href="https://alsaaleak.github.io/tags/qss">قصص</a></li>
+  <li><a href="https://alsaaleak.github.io/tags/mqlt">مقالات</a></li>
+</ul>
+
 
 <article>{{ section.content | safe }}</article>
 
@@ -22,18 +28,18 @@
           <a href="{{ post.permalink | safe }}">{{ post.title }}</a>
           {% if post.draft %}<span class="draft">(Draft)</span>{% endif %}
         </div>
-        {{ hooks::posts_below_title(page=post) }} 
+        {{ hooks::posts_below_title(page=post) }}
       </div>
-       <div class="matter">
+      <div class="matter">
         <ul>
-        {% if post.taxonomies is containing ("tags") %}
-        {% for tag in post.taxonomies["tags"] %}
-        <li><a href='{{ config.base_url | safe }}/tags/{{ tag | slugify }}'>{{ tag }}</a></li>
-        {% endfor %}
-        
-        {% endif %}
-    </ul>
-        
+          {% if post.taxonomies is containing ("tags") %}
+          {% for tag in post.taxonomies["tags"] %}
+          <li><a href='{{ config.base_url | safe }}/tags/{{ tag | slugify }}'>{{ tag }}</a></li>
+          {% endfor %}
+
+          {% endif %}
+        </ul>
+
       </div>
 
     </div>
