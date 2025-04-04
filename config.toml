@@ -69,6 +69,7 @@ menu_links = [
    { url = "$BASE_URL/about/", name = "من هم الصعاليك؟" },
    { url = "$BASE_URL/posts/", name = "الكُنَّاشَةُ" },
     { url = "$BASE_URL/webring/", name = "حِلق الصعاليك" },
+      { url = "$BASE_URL/magazine/", name = "مجلة الصعاليك" },
     # { url = "https://github.com/jimmyff/zola-inky", name = "Github" },
 ]
 

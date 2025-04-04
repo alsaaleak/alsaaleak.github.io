@@ -12,3 +12,4 @@ in_search_index = true
 <a href="https://qimatr.github.io/"><img alt="qimatr" src="https://fulanumoto.github.io/webrings/banner_img/qimatr.png"></a>
 <a href="https://fulanumoto.github.io/"><img alt="fulan" src="/fula.png"></a>
 </div>
+
