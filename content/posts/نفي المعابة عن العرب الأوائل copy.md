@@ -9,7 +9,7 @@ authors=["0xlanius"]
 			
 <div id="gspb_text-id-gsbp-05c9c9a" class="gspb_text gspb_text-id-gsbp-05c9c9a ">&nbsp;بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ</div>
 
-<b>ملاحظة: نُشر هذا المقال في <a href="https://alsaaleak.github.io/files/alsaaleak-mg-2.pdf"> العدد الثاني من مجلة الصعاليك</a></b>
+<b>ملاحظة: نُشر هذا المقال في <a href="https://alsaaleak.github.io/files/alsaaleak-mg-2.pdf"> العدد الثاني من مجلة الصعاليك</a></b> <br>
 الحمدلله الذي وهبنا عقلا نُعمله لنُبصر به نفوسنا ونعرف به حالنا ونزن به أقوالنا فنُقوِّم ما فسد، ونهذب ما انحرف. 
 
 أما بعد: 
