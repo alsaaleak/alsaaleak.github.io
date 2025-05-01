@@ -75,6 +75,12 @@ in_search_index = true
         <h4>العدد الأول</h4>
         <a href="/files/alsaaleak-mg-1.pdf" class="read-button">اقرأ المجلة</a>
     </div>
+       <div class="magazine-card">
+        <img src="/alsaleak-who.png" alt="الصعاليك - العدد الثاني">
+        <h3>مجلة الصعاليك</h3>
+        <h4>العدد الثاني</h4>
+        <a href="/files/alsaaleak-mg-2.pdf" class="read-button">اقرأ المجلة</a>
+    </div>
   
 </div>
 
