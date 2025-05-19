@@ -1,0 +1,51 @@
+@import url('https://fonts.bunny.net/css?family=ibm-plex-sans-arabic:400,700');
+
+body.fancy-mode .webrings img {
+    border-radius: 10px;
+}
+
+body.fancy-mode .webrings::-webkit-scrollbar {
+
+    display: none;
+
+
+}
+
+body.fancy-mode .container {}
+
+body.fancy-mode .container .items .item {
+    border: none;
+
+}
+
+body.fancy-mode .container .items img {
+    border-radius: 30%;
+
+}
+
+body.fancy-mode .container .items .item::before {
+    opacity: 0.9;
+    border: none;
+
+}
+
+body.fancy-mode .container span {
+    font-family: 'IBM Plex Sans Arabic';
+    margin: 5px;
+}
+
+body.fancy-mode .container span .number {
+    color: red;
+    font-size: 1.5rem;
+    /* margin: 0px; */
+    background: #000000;
+    padding: 5px;
+    font-family: monospace;
+    letter-spacing: 2px;
+}
+
+body.fancy-mode .footer {
+    margin: 0px 10px;
+    border-radius: 50px;
+    font-family: 'IBM Plex Sans Arabic';
+}

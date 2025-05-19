@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <title>تحويل النص إلى JSON String</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            direction: rtl;
+            padding: 20px;
+            background: linear-gradient(to right, #f0f4f7, #e2ecf3);
+            color: #333;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        textarea,
+        button {
+            width: 100%;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        pre {
+            background: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .copy-btn {
+            background-color: #2196F3;
+            margin-top: -10px;
+        }
+
+        .copy-btn:hover {
+            background-color: #1976D2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>🛠️ محوّل النص إلى JSON String</h1>
+
+        <label for="inputText">أدخل النص:</label>
+        <textarea id="inputText" placeholder="اكتب هنا..."></textarea>
+
+        <button onclick="convertText()">🔁 حوّل النص</button>
+
+        <label for="output">النص بعد stringify:</label>
+        <pre id="output"></pre>
+        <button class="copy-btn" onclick="copyToClipboard()">📋 انسخ الناتج</button>
+    </div>
+
+    <script>
+        function convertText() {
+            const input = document.getElementById("inputText").value;
+            const result = JSON.stringify(input);
+            document.getElementById("output").textContent = result;
+        }
+
+        function copyToClipboard() {
+            const text = document.getElementById("output").textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("✅ تم نسخ النص إلى الحافظة!");
+            }).catch(err => {
+                alert("حدث خطأ في النسخ: " + err);
+            });
+        }
+    </script>
+
+</body>
+
+</html>

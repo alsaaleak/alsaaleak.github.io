@@ -1,0 +1,5 @@
+  if (clickcounter > 700 && !itemStates["8"]) {
+        generateItemHTML("مطر العرنجيات", 1000, "images/darkmode.png", "rain(this)", "7", "مطر من الكلمات العرنجية");
+        itemStates["8"] = true;
+        counterpurches(true);
+    }
