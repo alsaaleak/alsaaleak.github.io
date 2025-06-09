@@ -24,10 +24,21 @@ body {
 
 .container {
     display: flex;
+
     justify-content: center;
     align-items: center;
     flex-direction: column;
     min-height: calc(100vh - 60px);
+}
+
+.container .element-container {}
+
+.container .element-container .eye {
+    width: 250px;
+}
+
+.container .element-container .eye img {
+    width: 100%;
 }
 
 
@@ -54,6 +65,7 @@ body {
     margin: 5px;
     border-radius: 5px;
     font-family: 'IBM Plex Sans Arabic', sans-serif;
+    z-index: 100;
 }
 
 .binamat-content p {
@@ -131,6 +143,7 @@ body {
 .container .items {
     margin: 10px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
@@ -150,6 +163,8 @@ body {
     transition: opacity 1s ease;
     cursor: not-allowed;
     position: relative;
+    background-color: var(--background-color2);
+    color: var(--text-color);
 }
 
 .container .items .item img {
@@ -182,11 +197,13 @@ body {
 }
 
 .container .items .item-1::after,
+.container .items .item-11::after,
 .show::after {
     left: -5px;
 }
 
 .container .items .item-1::after,
+.container .items .item-11::after,
 .close,
 .show::after {
     content: attr(data-owned);
@@ -246,16 +263,32 @@ body {
 }
 
 .webrings {
+
+    direction: ltr;
+}
+
+.webrings,
+.story {
     display: flex;
     width: 100vw;
     overflow-x: scroll;
     white-space: nowrap;
-    direction: ltr;
     gap: 10px;
     justify-content: center;
     align-items: center;
 
 }
+
+.story-link {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px;
+    margin: 5px;
+    background: #03A9F4;
+    border-radius: 5px;
+}
+
+
 
 .d-none {
     display: none !important;
@@ -529,7 +562,12 @@ body {
         width: 100%;
         margin-top: 10px;
         opacity: 0.5;
+
         padding: 2px 4px;
+    }
+
+    .container .element-container .eye {
+        width: 100%;
     }
 
 }
@@ -538,13 +576,14 @@ body {
     display: inline-block;
     background-color: gold;
     color: #000;
-    padding: 15px 25px;
+    padding: 5px;
     border-radius: 30px;
     font-weight: bold;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     position: relative;
     animation: fancy-pop 1.2s ease-out forwards, wiggle 2s infinite ease-in-out 2s;
+    font-size: 0.8rem;
 }
 
 @keyframes fancy-pop {
@@ -584,5 +623,19 @@ body {
 
     75% {
         transform: rotate(2deg);
+    }
+}
+
+.rain {
+    position: fixed;
+    top: -1vh;
+    transform: translateY(0);
+    animation: fall 3s linear;
+    color: #457b9d;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(105vh);
     }
 }
